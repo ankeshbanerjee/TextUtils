@@ -5,7 +5,7 @@ import TextForm from './components/TextForm';
 import About from './components/About';
 import Alert from './components/Alert';
 import React, { useState } from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 
 function App() {
@@ -34,7 +34,7 @@ function App() {
   }
   return (
     <>
-      <BrowserRouter>
+      <HashRouter>
         <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode}/>
         <Alert alert={alert}/>
         <div className="container">
@@ -43,7 +43,7 @@ function App() {
               <Route exact path='/' element={<TextForm showAlert={showAlert} heading='Enter your text below to analyze' mode={mode} />} />
           </Routes>
         </div>
-      </BrowserRouter>
+      </HashRouter>
       {/* check w3 schools react router for reference */}
       {/* why used exact prop in <Route/> : https://stackoverflow.com/questions/49162311/react-difference-between-route-exact-path-and-route-path */}
     </>
