@@ -1,6 +1,11 @@
 import React, {useState} from 'react'
 
 export default function TextForm(props) {
+  let changeTitle = ()=>{
+      document.title = "TextUtils - Home";
+  }
+  changeTitle();
+
   const [text, setText] = useState("");
   const handlelOnChange = (event) => {
     let newText = event.target.value;

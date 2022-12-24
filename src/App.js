@@ -1,10 +1,11 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
-// import About from './components/About';
+import About from './components/About';
 import Alert from './components/Alert';
 import React, { useState } from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
 function App() {
@@ -33,12 +34,18 @@ function App() {
   }
   return (
     <>
-      <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode}/>
-      <Alert alert={alert}/>
-      <div className="container">
-        <TextForm showAlert={showAlert} heading='Enter your text below to analyze' mode={mode} />
-      </div>
-      {/* <About/> */}
+      <BrowserRouter>
+        <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode}/>
+        <Alert alert={alert}/>
+        <div className="container">
+          <Routes>
+              <Route exact path='/about' element={<About mode={mode}/>}  />
+              <Route exact path='/' element={<TextForm showAlert={showAlert} heading='Enter your text below to analyze' mode={mode} />} />
+          </Routes>
+        </div>
+      </BrowserRouter>
+      {/* check w3 schools react router for reference */}
+      {/* why used exact prop in <Route/> : https://stackoverflow.com/questions/49162311/react-difference-between-route-exact-path-and-route-path */}
     </>
   );
 }
