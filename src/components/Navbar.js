@@ -8,7 +8,7 @@ export default function Navbar(props) {
     <>
         <nav className={`navbar navbar-expand-lg bg-${props.mode}`}>
             <div className="container-fluid">
-            <Link className={`navbar-brand text-${props.mode === 'light' ? 'dark' : 'light'}`} to="/">{props.title}</Link>
+            <Link className={`navbar-brand text-${props.mode === 'light' ? 'dark' : 'light'}`} to="/TextUtils">{props.title}</Link>
             <div className="form-check form-switch px-4" style={{position: 'absolute', right: '55px', top: '17px'}}>
                 <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={props.toggleMode} style={{cursor : 'pointer'}}/>
                 <label className="form-check-label" htmlFor="flexSwitchCheckDefault">
@@ -24,10 +24,10 @@ export default function Navbar(props) {
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
-                    <Link className={`nav-link active text-${props.mode === 'light' ? 'dark' : 'light'}`} aria-current="page" to="/">Home</Link>
+                    <Link className={`nav-link active text-${props.mode === 'light' ? 'dark' : 'light'}`} aria-current="page" to="/TextUtils">Home</Link>
                 </li>
                 <li className="nav-item">
-                    <Link className={`nav-link text-${props.mode === 'light' ? 'dark' : 'light'}`} to="/about">{props.aboutText}</Link>
+                    <Link className={`nav-link text-${props.mode === 'light' ? 'dark' : 'light'}`} to="/TextUtils/about">{props.aboutText}</Link>
                 </li>
                 </ul>
 
