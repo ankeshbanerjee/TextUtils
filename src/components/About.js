@@ -7,8 +7,8 @@ export default function About(props) {
     changeTitle();
     
   let myStyle = {
-    color : props.mode === 'light' ? 'black' : 'white',
-    backgroundColor : props.mode === 'light' ? 'white' : 'black', 
+    color : props.mode === 'light' ? '#343a40' : 'white',
+    backgroundColor : props.mode === 'light' ? 'white' : '#343a40', 
     padding: '20px'
   }
   return (
